@@ -11,7 +11,7 @@ class BufferedQueue():
             self.queue_size = queue_size
 
     def enqueue(self, key, value):
-        print key, value
+        print "Enqueueing %s for key %s" % (value, key)
         if key not in self.queue_map:
             self.queue_map[key] = []
         self.queue_map[key].append(value)
