@@ -1,7 +1,9 @@
 import json
 import os
-from bufferedQueue import BufferedQueue
-from abstractMessageQueue import AbstractMessageQueue
+import sys
+import random
+from buffered_queue import BufferedQueue
+from abstract_message_queue import AbstractMessageQueue
 
 if os.path.isfile('buffer_queue.json'):
 	buffered_queue_map = json.load(open("buffer_queue.json"))
@@ -13,6 +15,16 @@ else:
 	buffer_queue = BufferedQueue()
 
 message_queue = AbstractMessageQueue('localhost', 'direct')
+
+if len(sys.argv) > 1:
+	demo = True if sys.argv[1] == 'demo' else False
+	if demo:
+		keys = ['bq1', 'bq2', 'bq3']
+		for _ in range(50):
+			queue_name = random.choice(keys)
+			demo_buffer_resp = buffer_queue.enqueue(queue_name, random.randint(0,100))
+			if demo_buffer_resp:
+				message_queue.publish(queue_name, demo_buffer_resp)
 
 while True:
 	queue_name = raw_input("Enter Queue Name or Enter q or quit: ")

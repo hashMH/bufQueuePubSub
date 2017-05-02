@@ -1,4 +1,4 @@
-from abstractMessageQueue import AbstractMessageQueue
+from abstract_message_queue import AbstractMessageQueue
 import sys
 
 message_queue = AbstractMessageQueue('localhost', 'direct')

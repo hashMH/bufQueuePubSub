@@ -1,5 +1,4 @@
 import json
-import random
 
 class BufferedQueue():
     queue_map = {}
@@ -27,8 +26,3 @@ class BufferedQueue():
 
     def save_state(self):
         json.dump(self.get_buffered_queue_state(), open('buffer_queue.json', 'w'))
-
-    def send_demo_data(self):
-        keys = ['apple', 'orange', 'bq3']
-        for _ in range(50):
-            self.enqueue(random.choice(keys), random.randint(0,100))
