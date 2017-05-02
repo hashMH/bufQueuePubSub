@@ -23,6 +23,9 @@ hail_enterprise.py -- Its a publisher that takes user input and sends it across 
 >Enter Queue Name or Enter q or quit: apple                                                                              
 >Enter Element for your Buffer Message: 1  
 
+>python hail_enterprise.py demo
+>Its runs a random data through the program.
+
 enterprise_respond.py -- It''s enterprises receiver module, which can selectively listen to keys
 
 >python enterprise_respond.py apple orange      
