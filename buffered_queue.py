@@ -1,5 +1,8 @@
 import json
 
+# this is bufferedQueue.
+# It returns a value of key when it reaches buffer size.
+# buffer_queue.json is updated each time program get halted
 class BufferedQueue():
     queue_map = {}
     queue_size = 6

@@ -1,6 +1,8 @@
 from abstract_message_queue import AbstractMessageQueue
 import sys
 
+# This listens to queue for messages by values in argument
+
 message_queue = AbstractMessageQueue('localhost', 'direct')
 
 listening = sys.argv[1:]

@@ -5,6 +5,12 @@ import random
 from buffered_queue import BufferedQueue
 from abstract_message_queue import AbstractMessageQueue
 
+# BufferedQueue is instantiated either afresh or using a state saved on disk
+# If 'demo' keyword is passed then a randomised demo payload will be sent
+# As long as you dont type quit or q, the program will keep on taking in input
+# and pushing the input to buffered queue. When buffered Queue returns dequeue
+# then its gets published by key of the bufQueue.
+
 if os.path.isfile('buffer_queue.json'):
 	buffered_queue_map = json.load(open("buffer_queue.json"))
 	buffer_queue = BufferedQueue(

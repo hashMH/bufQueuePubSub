@@ -2,6 +2,9 @@ import pika
 import json
 import sys
 
+
+# This class is wrapper to publish/bind/consume data from 
+# rabbitmq
 class AbstractMessageQueue():
     channel = None
     exchange = None
